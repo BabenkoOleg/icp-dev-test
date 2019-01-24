@@ -16,5 +16,16 @@
 require 'rails_helper'
 
 RSpec.describe Company, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { build(:company) }
+
+  it { should belong_to(:contact_person).optional }
+  it { should have_many(:contacts) }
+  it { should have_many(:claims).dependent(:destroy) }
+
+  it { should validate_presence_of(:name) }
+  it { should validate_presence_of(:email) }
+  it { should validate_presence_of(:phone) }
+  it { should validate_presence_of(:address) }
+
+  it { should validate_uniqueness_of(:email) }
 end

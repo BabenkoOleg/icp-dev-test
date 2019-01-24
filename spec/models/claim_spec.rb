@@ -25,5 +25,17 @@
 require 'rails_helper'
 
 RSpec.describe Claim, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { build(:claim) }
+
+  it { should belong_to(:company) }
+
+  it { should validate_presence_of(:percentage_drop) }
+  it { should validate_presence_of(:price_drop) }
+  it { should validate_presence_of(:cap_drop) }
+  it { should validate_presence_of(:signed_losses) }
+  it { should validate_presence_of(:current_potential_income) }
+  it { should validate_presence_of(:total_potential_income) }
+  it { should validate_presence_of(:traded_inflation) }
+
+  it { should define_enum_for(:status).with([:created, :approved, :blocked]) }
 end
