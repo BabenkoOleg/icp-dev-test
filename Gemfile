@@ -28,6 +28,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
+# A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard
+gem 'jwt'
 # Annotate Rails classes with schema and routes info
 gem 'annotate'
 
