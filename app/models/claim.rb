@@ -26,6 +26,10 @@ class Claim < ApplicationRecord
   # === relations ===
   belongs_to :company
 
+  # === validations ===
+  validates_presence_of :percentage_drop, :price_drop, :cap_drop, :signed_losses,
+                        :current_potential_income, :total_potential_income, :traded_inflation
+
   # === enums ===
   enum status: [:created, :approved, :blocked]
 end

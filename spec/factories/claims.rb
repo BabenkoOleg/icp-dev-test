@@ -32,6 +32,7 @@ FactoryBot.define do
     signed_losses { Faker::Number.decimal(3, 2) }
     status { Claim.statuses.keys.sample.to_sym }
     total_potential_income { Faker::Number.decimal(3, 2) }
+    current_potential_income { Faker::Number.decimal(3, 2) }
     traded_inflation { Faker::Number.decimal(3, 2) }
 
     company
