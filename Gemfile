@@ -33,6 +33,14 @@ group :development, :test do
   gem 'pry-rails'
   # Pretty print your Ruby objects with style - in full color and with proper indentation
   gem 'awesome_print'
+  # A library for setting up Ruby objects as test data
+  gem 'factory_bot_rails'
+  # A library for generating fake data such as names, addresses, and phone numbers.
+  gem 'faker'
+  # Testing framework for Rails 3.x, 4.x and 5.x.
+  gem 'rspec-rails'
+  # Simple one-liner tests for common Rails functionality
+  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -42,6 +50,14 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :test do
+  # Strategies for cleaning databases in Ruby
+  gem 'database_cleaner'
+  # Code coverage with a powerful configuration library and automatic merging of coverage across test suites
+  gem 'simplecov', require: false
+  # RSpec progress bar formatter
+  gem 'fuubar'
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
