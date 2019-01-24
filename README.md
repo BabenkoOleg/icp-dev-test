@@ -1,24 +1,27 @@
-# README
+# ICP Dev Test - RoR
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+RESTfull API for claim management
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+```
+$ git clone git@github.com:BabenkoOleg/icp-dev-test.git
+$ cd ./icp-dev-test
+```
 
-* System dependencies
+### Prerequisites
 
-* Configuration
+The application uses ruby 2.5.3
 
-* Database creation
+### Installing dependencies and running
 
-* Database initialization
+```
+$ bundle install
+$ rails s
+```
 
-* How to run the test suite
+## Running the tests
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+bundle exec rspec spec
+```
