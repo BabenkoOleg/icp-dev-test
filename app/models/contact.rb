@@ -18,4 +18,12 @@
 #
 
 class Contact < ApplicationRecord
+  # === relations ===
+  belongs_to :company
+  has_many :contact_companies, class_name: 'Company', foreign_key: :contract_person_id
+
+  # === validations ===
+  validates_presence_of   :name, :email, :phone, :address, :position
+  validates_uniqueness_of :email, case_sensitive: true
+  validates_format_of     :email, with: /\A[^@\s]+@[^@\s]+\z/
 end

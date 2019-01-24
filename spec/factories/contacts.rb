@@ -18,7 +18,17 @@
 #
 
 FactoryBot.define do
+  sequence :contact_email do |n|
+    "contact_#{n}@example.com"
+  end
+
   factory :contact do
-    
+    name { Faker::Name.name  }
+    email { generate(:contact_email) }
+    phone { Faker::PhoneNumber.cell_phone }
+    address { Faker::Address.full_address }
+    position { 'RoR Developer' }
+
+    company
   end
 end

@@ -23,4 +23,9 @@
 #
 
 class Claim < ApplicationRecord
+  # === relations ===
+  belongs_to :company
+
+  # === enums ===
+  enum status: [:created, :approved, :blocked]
 end

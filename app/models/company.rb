@@ -14,4 +14,13 @@
 #
 
 class Company < ApplicationRecord
+  # === relations ===
+  belongs_to :contact_person, class_name: 'Contact', optional: true
+  has_many :contacts
+  has_many :claims, dependent: :destroy
+
+  # === validations ===
+  validates_presence_of   :name, :email, :phone, :address
+  validates_uniqueness_of :email, case_sensitive: true
+  validates_format_of     :email, with: /\A[^@\s]+@[^@\s]+\z/
 end

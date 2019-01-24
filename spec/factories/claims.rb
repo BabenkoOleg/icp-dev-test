@@ -24,6 +24,16 @@
 
 FactoryBot.define do
   factory :claim do
-    
+    cap_drop { Faker::Number.decimal(3, 2) }
+    data_provided { Faker::Boolean.boolean }
+    likely_bookbuild { Faker::Boolean.boolean }
+    percentage_drop { Faker::Number.decimal(3, 2) }
+    price_drop { Faker::Number.decimal(3, 2) }
+    signed_losses { Faker::Number.decimal(3, 2) }
+    status { Claim.statuses.keys.sample.to_sym }
+    total_potential_income { Faker::Number.decimal(3, 2) }
+    traded_inflation { Faker::Number.decimal(3, 2) }
+
+    company
   end
 end
