@@ -28,6 +28,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
+# Annotate Rails classes with schema and routes info
+gem 'annotate'
+
 group :development, :test do
   # A runtime developer console and IRB alternative with powerful introspection capabilities
   gem 'pry-rails'
