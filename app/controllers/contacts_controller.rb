@@ -38,6 +38,13 @@ class ContactsController < ApplicationController
     head :ok
   end
 
+  # GET /companies/csv
+  def csv
+    attributes = %w{name email phone address position company_id}
+    data = Contact.to_csv(attributes)
+    send_data data, filename: "contacts-#{Date.today}.csv"
+  end
+
   private
 
   def set_contact

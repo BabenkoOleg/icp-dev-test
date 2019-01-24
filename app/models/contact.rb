@@ -18,6 +18,9 @@
 #
 
 class Contact < ApplicationRecord
+  # === concerns ===
+  include ToCSV
+
   # === relations ===
   belongs_to :company
   has_many :contact_companies, class_name: 'Company', foreign_key: :contract_person_id

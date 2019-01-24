@@ -48,4 +48,9 @@ RSpec.describe ClaimsController, type: :controller do
     before(:each) { delete :destroy, params: { id: claim.id } }
     it { expect(response).to have_http_status(:success) }
   end
+
+  context 'csv' do
+    before(:each) { get :csv }
+    it { expect(response.header['Content-Type']).to include 'text/csv' }
+  end
 end

@@ -14,6 +14,9 @@
 #
 
 class Company < ApplicationRecord
+  # === concerns ===
+  include ToCSV
+
   # === relations ===
   belongs_to :contact_person, class_name: 'Contact', optional: true
   has_many :contacts

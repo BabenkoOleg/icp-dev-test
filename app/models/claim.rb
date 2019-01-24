@@ -23,6 +23,9 @@
 #
 
 class Claim < ApplicationRecord
+  # === concerns ===
+  include ToCSV
+
   # === relations ===
   belongs_to :company
 

@@ -38,6 +38,13 @@ class CompaniesController < ApplicationController
     head :ok
   end
 
+  # GET /companies/csv
+  def csv
+    attributes = %w{name email phone address web_site contact_person_id}
+    data = Company.to_csv(attributes)
+    send_data data, filename: "companies-#{Date.today}.csv"
+  end
+
   private
 
   def set_company

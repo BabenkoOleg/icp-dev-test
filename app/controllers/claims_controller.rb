@@ -38,6 +38,16 @@ class ClaimsController < ApplicationController
     head :ok
   end
 
+    # GET /companies/csv
+    def csv
+      attributes = %w[
+        cap_drop data_provided likely_bookbuild percentage_drop price_drop signed_losses status
+        total_potential_income current_potential_income traded_inflation company_id
+      ]
+      data = Claim.to_csv(attributes)
+      send_data data, filename: "claims-#{Date.today}.csv"
+    end
+
   private
 
   def set_claim
