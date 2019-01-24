@@ -22,10 +22,10 @@
 #  index_claims_on_company_id  (company_id)
 #
 
-class Claim < ApplicationRecord
-  # === relations ===
-  belongs_to :company
+class ClaimSerializer
+  include FastJsonapi::ObjectSerializer
 
-  # === enums ===
-  enum status: [:created, :approved, :blocked]
+  attributes :cap_drop, :current_potential_income, :data_provided, :likely_bookbuild,
+             :percentage_drop, :price_drop, :signed_losses, :status, :total_potential_income,
+             :traded_inflation, :created_at
 end

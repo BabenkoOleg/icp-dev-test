@@ -32,6 +32,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jwt'
 # Annotate Rails classes with schema and routes info
 gem 'annotate'
+# A lightning fast JSON:API serializer for Ruby Objects
+gem 'fast_jsonapi'
 
 group :development, :test do
   # A runtime developer console and IRB alternative with powerful introspection capabilities

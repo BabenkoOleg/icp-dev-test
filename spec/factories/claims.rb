@@ -10,7 +10,7 @@
 #  percentage_drop          :integer
 #  price_drop               :integer
 #  signed_losses            :integer
-#  status                   :integer          default(0)
+#  status                   :integer          default("created")
 #  total_potential_income   :integer
 #  traded_inflation         :integer
 #  created_at               :datetime         not null
